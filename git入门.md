@@ -13,6 +13,13 @@
 >
 >   alias ll='ls -al'
 >
+>   解决中文乱码
+>
+>   1. gitbash执行：git config --global core.quotepath false
+>   2. git安装目录/etc/bash.bashrc 文件最后加入下面两行代码
+>   	- export LANG="zh_CN.UTF-8"
+>   	- export LC_ALL="zh_CN.UTF-8"
+>
 >   配置ssh，添加id_rsa.pub到github,gitee,gitlab
 >
 >   ssh-keygen -t rsa 生成 RSA类型的密钥，cat 查看
