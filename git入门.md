@@ -7,9 +7,15 @@
 
 # git 使用
 
+>   ~根目录下 touch .bashrc 添加以下两行代码，命令别称
+>
+>   alias git-log='git log --pretty=oneline --all --graph --abbrev-commit'
+>
+>   alias ll='ls -al'
+>
 >   配置ssh，添加id_rsa.pub到github,gitee,gitlab
 >
->   ssh-keygen -t rsa 生成 RSA类型的密钥
+>   ssh-keygen -t rsa 生成 RSA类型的密钥，cat 查看
 
 `git init` 初始化本地仓库
 
@@ -23,6 +29,8 @@ git config --global user.email test@runoob.com
 
 `git pull ` 先pull一次，因为比如gitlab会自动添加个sb readme.md，github则不会
 
+或者`git clone 远程仓库地址`
+
 push之前检查远程仓库分支名与本地相同，否则会创建新的分支，使用`git branch -m 原分支 新分支`
 
 `git push -u origin main:main` -u 等于`--set-upstream`
@@ -33,6 +41,12 @@ push之前检查远程仓库分支名与本地相同，否则会创建新的分�
 
 `git add .` 添加所有有更改的文件到缓冲区
 
+`git restore  目标文件` 暂存区 -> 覆盖 -> 工作区，目标文件（注意：完全确认覆盖时使用）
+
+`git rm --cached 目标文件 ` 从暂存区移除文件，命令： 目标文件
+
+
+
 `git commit -m "tips"`  提交到本地仓库
 
 `git push` 然后提交到远程仓库
@@ -40,6 +54,8 @@ push之前检查远程仓库分支名与本地相同，否则会创建新的分�
 
 
 `git branch` 列出分支
+
+`git branch 分支名` 创建一个新的分支
 
 `git checkout -b 分支`  -b意味没有该分支就新建一个，有了就跳转
 
@@ -57,7 +73,7 @@ push之前检查远程仓库分支名与本地相同，否则会创建新的分�
 
 eg: git merge origin/master 将远程master分支merge到当前分支上
 
-对于出现的**conflict**(冲突)需要手动解决
+对于出现的**conflict**(冲突)需要手动解决，然后再次提交
 
 
 
